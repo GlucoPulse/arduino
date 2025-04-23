@@ -8,6 +8,7 @@
 #include <U8g2lib.h>
 #include <WiFiManager.h> // Include WiFiManager
 #include <Wire.h>
+
 // Firebase Configuration
 #define FIREBASE_HOST "https://gp-auth-670ed-default-rtdb.firebaseio.com/"
 // #define FIREBASE_AUTH "gkg28ycr4b1OtY3z1h6wKmYIweU8p1I1v8vNUObT"
@@ -210,7 +211,7 @@ void sampleAndAverageVitals(float &avg_glucose, float &avg_spo2) {
 
 					float spo2 = kSpO2_A * r * r + kSpO2_B * r + kSpO2_C;
 					float bpm = 80; // Placeholder until heartbeat logic is integrated
-					float glucose = 16714.61 + 0.47 * bpm - 351.045 * spo2 + 1.85 * (spo2 * spo2);
+					//float glucose = 16714.61 + 0.47 * bpm - 351.045 * spo2 + 1.85 * (spo2 * spo2);
 
 					// Clamp values
 					glucose = constrain(glucose, 1, 400);
